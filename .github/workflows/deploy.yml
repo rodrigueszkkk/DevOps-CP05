@@ -1,0 +1,40 @@
+name: Build and Deploy to Azure Web App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: 'app-safeshelter-rm561760'
+  DOTNET_VERSION: '8.0.x'
+  PROJECT_PATH: './src/SafeShelter.API'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core SDK ${{ env.DOTNET_VERSION }}
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore Dependencies
+      run: dotnet restore ${{ env.PROJECT_PATH }}/SafeShelter.API.csproj
+
+    - name: Build Application
+      run: dotnet build ${{ env.PROJECT_PATH }}/SafeShelter.API.csproj --configuration Release --no-restore
+
+    - name: Publish Application
+      run: dotnet publish ${{ env.PROJECT_PATH }}/SafeShelter.API.csproj --configuration Release --no-build --output ./publish
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ./publish
