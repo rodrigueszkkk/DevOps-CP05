@@ -1,0 +1,67 @@
+{
+  "descricao": "Operacoes CRUD completas para a entidade Comunidades",
+  "operacoes": {
+    "GET_ALL": {
+      "metodo": "GET",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/comunidades",
+      "descricao": "Lista todas as comunidades cadastradas no Azure SQL Server",
+      "exemplo_resposta": [
+        {
+          "id": 1,
+          "nome": "Comunidade Paraisopolis - Setor A",
+          "poligonoGeografico": "-23.5988,-46.7262;-23.5995,-46.7270",
+          "criadoEm": "2026-10-05T19:00:00Z",
+          "totalDispositivos": 2
+        }
+      ]
+    },
+    "GET_BY_ID": {
+      "metodo": "GET",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/comunidades/1",
+      "descricao": "Obtem uma comunidade por ID",
+      "exemplo_resposta": {
+        "id": 1,
+        "nome": "Comunidade Paraisopolis - Setor A",
+        "poligonoGeografico": "-23.5988,-46.7262;-23.5995,-46.7270",
+        "criadoEm": "2026-10-05T19:00:00Z",
+        "totalDispositivos": 2
+      }
+    },
+    "POST": {
+      "metodo": "POST",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/comunidades",
+      "descricao": "Cadastra uma nova comunidade",
+      "payload": {
+        "nome": "Comunidade Morro do Alemao - Bloco B",
+        "poligonoGeografico": "-22.8590,-43.2730;-22.8600,-43.2740"
+      },
+      "exemplo_resposta": {
+        "id": 4,
+        "nome": "Comunidade Morro do Alemao - Bloco B",
+        "poligonoGeografico": "-22.8590,-43.2730;-22.8600,-43.2740",
+        "criadoEm": "2026-10-05T19:20:00Z",
+        "totalDispositivos": 0
+      }
+    },
+    "PUT": {
+      "metodo": "PUT",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/comunidades/4",
+      "descricao": "Atualiza dados de uma comunidade existente",
+      "payload": {
+        "nome": "Comunidade Morro do Alemao - Bloco B (Atualizado)",
+        "poligonoGeografico": "-22.8595,-43.2735;-22.8605,-43.2745"
+      },
+      "exemplo_resposta": {
+        "mensagem": "Comunidade atualizada com sucesso."
+      }
+    },
+    "DELETE": {
+      "metodo": "DELETE",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/comunidades/4",
+      "descricao": "Remove uma comunidade e seus dados em cascata",
+      "exemplo_resposta": {
+        "mensagem": "Comunidade ID 4 removida com sucesso."
+      }
+    }
+  }
+}

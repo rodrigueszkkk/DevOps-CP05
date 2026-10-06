@@ -1,0 +1,72 @@
+{
+  "descricao": "Operacoes CRUD completas para a entidade Dispositivos (Relacionada a Comunidades)",
+  "operacoes": {
+    "GET_ALL": {
+      "metodo": "GET",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/dispositivos",
+      "descricao": "Lista todos os dispositivos IoT e a comunidade associada",
+      "exemplo_resposta": [
+        {
+          "id": 1,
+          "macAddress": "ESP32-A1B2-C3D4",
+          "perfilResponsavel": "Defesa Civil - Setor Sul",
+          "comunidadeId": 1,
+          "nomeComunidade": "Comunidade Paraisopolis - Setor A",
+          "criadoEm": "2026-10-05T19:00:00Z"
+        }
+      ]
+    },
+    "GET_BY_ID": {
+      "metodo": "GET",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/dispositivos/1",
+      "descricao": "Obtem dispositivo por ID",
+      "exemplo_resposta": {
+        "id": 1,
+        "macAddress": "ESP32-A1B2-C3D4",
+        "perfilResponsavel": "Defesa Civil - Setor Sul",
+        "comunidadeId": 1,
+        "nomeComunidade": "Comunidade Paraisopolis - Setor A",
+        "criadoEm": "2026-10-05T19:00:00Z"
+      }
+    },
+    "POST": {
+      "metodo": "POST",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/dispositivos",
+      "descricao": "Cadastra um novo dispositivo IoT vinculado a uma comunidade",
+      "payload": {
+        "macAddress": "ESP32-DEV-9999",
+        "perfilResponsavel": "Brigada Voluntaria",
+        "comunidadeId": 1
+      },
+      "exemplo_resposta": {
+        "id": 4,
+        "macAddress": "ESP32-DEV-9999",
+        "perfilResponsavel": "Brigada Voluntaria",
+        "comunidadeId": 1,
+        "nomeComunidade": "Comunidade Paraisopolis - Setor A",
+        "criadoEm": "2026-10-05T19:25:00Z"
+      }
+    },
+    "PUT": {
+      "metodo": "PUT",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/dispositivos/4",
+      "descricao": "Atualiza dados de um dispositivo",
+      "payload": {
+        "macAddress": "ESP32-DEV-9999",
+        "perfilResponsavel": "Brigada Voluntaria - Turno Noite",
+        "comunidadeId": 1
+      },
+      "exemplo_resposta": {
+        "mensagem": "Dispositivo atualizado com sucesso."
+      }
+    },
+    "DELETE": {
+      "metodo": "DELETE",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/dispositivos/4",
+      "descricao": "Remove um dispositivo do sistema",
+      "exemplo_resposta": {
+        "mensagem": "Dispositivo ID 4 removido com sucesso."
+      }
+    }
+  }
+}

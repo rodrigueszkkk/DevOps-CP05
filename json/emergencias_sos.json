@@ -1,0 +1,27 @@
+{
+  "descricao": "Operacoes de Alerta de Emergencia SOS vinculadas a Dispositivos",
+  "operacoes": {
+    "POST_SOS": {
+      "metodo": "POST",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/emergencias",
+      "payload": {
+        "idDispositivo": "ESP32-A1B2-C3D4",
+        "tipoAlerta": "ENXURRADA_CRITICA",
+        "latitude": -23.5989,
+        "longitude": -46.7263,
+        "timestamp": "2026-10-05T19:30:00Z"
+      }
+    },
+    "GET_ATIVAS": {
+      "metodo": "GET",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/emergencias/ativas"
+    },
+    "PUT_STATUS": {
+      "metodo": "PUT",
+      "url": "https://app-safeshelter-rm561760.azurewebsites.net/api/v1/emergencias/1/status",
+      "payload": {
+        "novoStatus": "EM_ATENDIMENTO"
+      }
+    }
+  }
+}

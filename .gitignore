@@ -1,0 +1,20 @@
+# Visual Studio / .NET Core
+bin/
+obj/
+*.user
+*.suo
+publish/
+publish_app.zip
+
+# Secrets / Environment
+.env
+.env.*
+!.env.example
+appsettings.Production.json
+
+# IDEs
+.vscode/
+.idea/
+
+# Deliverables / PDFs
+*.pdf

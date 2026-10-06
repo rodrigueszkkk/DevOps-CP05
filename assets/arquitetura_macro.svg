@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 550" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="azureBox" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="950" height="550" rx="16" fill="url(#bg)"/>
+
+  <text x="475" y="45" font-family="Segoe UI, Helvetica, Arial" font-size="22" font-weight="bold" fill="#38bdf8" text-anchor="middle">
+    ARQUITETURA MACRO DA SOLUCAO EM NUVEM (AZURE PAAS)
+  </text>
+  <text x="475" y="70" font-family="Segoe UI, Helvetica, Arial" font-size="13" fill="#94a3b8" text-anchor="middle">
+    SafeShelter API - 2o Checkpoint 2o Semestre (DevOps Tools &amp; Cloud Computing)
+  </text>
+
+  <!-- Left: Developer / CI/CD -->
+  <rect x="40" y="110" width="240" height="390" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="160" y="140" font-family="Segoe UI" font-size="15" font-weight="bold" fill="#f8fafc" text-anchor="middle">Ambiente do Desenvolvedor</text>
+  
+  <rect x="60" y="165" width="200" height="70" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="160" y="195" font-family="Segoe UI" font-size="14" font-weight="bold" fill="#f1f5f9" text-anchor="middle">GitHub Repository</text>
+  <text x="160" y="215" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Branch: main | GitHub Actions</text>
+
+  <rect x="60" y="255" width="200" height="70" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+  <text x="160" y="285" font-family="Segoe UI" font-size="14" font-weight="bold" fill="#38bdf8" text-anchor="middle">Scripts Azure CLI</text>
+  <text x="160" y="305" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">scripts/01_setup_infra.sh / .ps1</text>
+
+  <rect x="60" y="345" width="200" height="70" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="1"/>
+  <text x="160" y="375" font-family="Segoe UI" font-size="14" font-weight="bold" fill="#fde047" text-anchor="middle">DDL das Tabelas</text>
+  <text x="160" y="395" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">scripts/ddl.sql (Comunidades/Dispositivos)</text>
+
+  <rect x="60" y="435" width="200" height="45" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="160" y="462" font-family="Segoe UI" font-size="12" font-weight="bold" fill="#34d399" text-anchor="middle">Deploy: az webapp deploy</text>
+
+  <!-- Right: Azure Cloud Platform -->
+  <rect x="320" y="110" width="590" height="390" rx="14" fill="url(#azureBox)" stroke="#0284c7" stroke-width="2"/>
+  <text x="615" y="140" font-family="Segoe UI" font-size="16" font-weight="bold" fill="#38bdf8" text-anchor="middle">
+    Microsoft Azure (Regiao: East US) - Resource Group: rg-safeshelter-rm561760
+  </text>
+
+  <!-- Component 1: Azure App Service (Web App) -->
+  <rect x="350" y="170" width="250" height="130" rx="10" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="475" y="200" font-family="Segoe UI" font-size="15" font-weight="bold" fill="#38bdf8" text-anchor="middle">Azure App Service</text>
+  <text x="475" y="220" font-family="Segoe UI" font-size="12" fill="#e2e8f0" text-anchor="middle">app-safeshelter-rm561760</text>
+  <text x="475" y="240" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Plano Linux F1 (Free) | .NET 8 LTS</text>
+  <text x="475" y="260" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Swagger UI: /index.html</text>
+  <text x="475" y="280" font-family="Segoe UI" font-size="11" fill="#38bdf8" text-anchor="middle">HTTPS Port 443</text>
+
+  <!-- Component 2: Application Insights -->
+  <rect x="630" y="170" width="250" height="130" rx="10" fill="#0f172a" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="755" y="200" font-family="Segoe UI" font-size="15" font-weight="bold" fill="#c084fc" text-anchor="middle">Application Insights</text>
+  <text x="755" y="220" font-family="Segoe UI" font-size="12" fill="#e2e8f0" text-anchor="middle">ai-safeshelter-rm561760</text>
+  <text x="755" y="240" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Telemetria &amp; Live Metrics</text>
+  <text x="755" y="260" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Monitoramento de Falhas e Requisicoes</text>
+  <text x="755" y="280" font-family="Segoe UI" font-size="11" fill="#c084fc" text-anchor="middle">Connection String integrada</text>
+
+  <!-- Component 3: Azure SQL Database PaaS -->
+  <rect x="420" y="340" width="390" height="135" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="615" y="370" font-family="Segoe UI" font-size="15" font-weight="bold" fill="#fbbf24" text-anchor="middle">Azure SQL Database (PaaS)</text>
+  <text x="615" y="390" font-family="Segoe UI" font-size="12" fill="#e2e8f0" text-anchor="middle">Servidor: sql-safeshelter-rm561760-eastus.database.windows.net</text>
+  <text x="615" y="410" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Database: db-safeshelter | Camada Basic (5 DTUs)</text>
+  <text x="615" y="430" font-family="Segoe UI" font-size="11" fill="#94a3b8" text-anchor="middle">Tabelas Relacionadas (1:N): Comunidades &lt;--&gt; Dispositivos</text>
+  <text x="615" y="450" font-family="Segoe UI" font-size="11" fill="#fbbf24" text-anchor="middle">Porta 1433 | Firewall: AllowAzureServices + liberaGeral</text>
+</svg>
